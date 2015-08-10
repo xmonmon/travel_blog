@@ -18,7 +18,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-    user = User.find_by_id(session[:user_id])
+    @user = User.find_by_id(session[:user_id])
   end
 
   def update
@@ -35,6 +35,7 @@ class UsersController < ApplicationController
 
   private
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :email, :password, :photo)
+      params.require(:user).permit(:first_name, :last_name, :current_city, :email, :password, :photo)
     end
+
 end
