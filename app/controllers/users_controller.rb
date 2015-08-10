@@ -6,15 +6,16 @@ class UsersController < ApplicationController
 
   def create
     user = User.new(user_params)
-    if user_params[:photo] == nil
-      user.photo = DEFAULT PHOTO
+    if user.photo == ""
+      user.photo = "https://i.imgur.com/GceZM8o.png"
     end
     user.save
+    session[:user_id] = user.id
     redirect_to profile_path
   end
 
   def show
-    @user = User.find_by_id(session[:user_id])
+    @user = User.find_by_id(current_user)
   end
 
   def edit

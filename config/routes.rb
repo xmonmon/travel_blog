@@ -5,8 +5,8 @@ get "/signup", to: "users#new"
 post "/signup", to: "users#create"
 get "/profile", to: "users#show"
 get "/profile/edit", to: "users#edit"
-patch "/profile/edit", to: "users#update"
-delete "/profile", to: "users#destroy"
+patch "/profile", to: "users#update", as: "update_user"
+delete "/profile", to: "users#destroy", as: "delete_user"
 
 #posts routes
 resources :posts
@@ -19,7 +19,6 @@ get "/cities/:id", to: "cities#show"
 #the sessions
 get "/login", to: "sessions#new"
 get "/logout", to: "sessions#destroy"
-# post "/login", to: "sessions#create"
 resources :sessions, only: [:create]
 
 #pages routes
