@@ -1,4 +1,6 @@
 == Travel Blog
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Have you ever wanted an easy way to share travel tips? Look no further... Travel blog is a fully-featured, robust, cloud-based web app that brings the sage wisdom of worldly travelers to the tips of your fingers.
+
+Created by Tim Festa, Zoe Foss, Monika Chumber, and Ian Civgin
+©2015
