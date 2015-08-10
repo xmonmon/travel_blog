@@ -14,21 +14,21 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find_by_id(session[:id])
+    @user = User.find_by_id(session[:user_id])
   end
 
   def edit
-    user = User.find_by_id(session[:id])
+    user = User.find_by_id(session[:user_id])
   end
 
   def update
-    user = User.find_by_id(session[:id])
+    user = User.find_by_id(session[:user_id])
     user.update_attributes(user_params)
     redirect_to profile_path
   end
 
   def destroy
-    user = User.find(session[:id])
+    user = User.find(session[:user_id])
     user.destroy
     redirect_to root_path
   end
