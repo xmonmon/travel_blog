@@ -18,8 +18,9 @@ get "/cities/:id", to: "cities#show"
 
 #the sessions
 get "/login", to: "sessions#new"
-post "/login", to: "sessions#create"
 get "/logout", to: "sessions#destroy"
+# post "/login", to: "sessions#create"
+resources :sessions, only: [:create]
 
 #pages routes
 root "pages#index"
