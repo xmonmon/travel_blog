@@ -9,7 +9,7 @@ patch "/vagabonds/:id", to: "users#update", as: "update_user"
 delete "/vagabonds/:id", to: "users#destroy", as: "delete_user"
 
 #posts routes
-get "/cities/:id/new", to: "posts#new"
+get "/cities/:id/new", to: "posts#new", as:"new_post"
 delete "/posts/:id", to: "posts#destroy", as: "delete_post"
 resources :posts, except: [:new, :destroy]
 
@@ -29,14 +29,14 @@ root "pages#index"
 end
 
 
-#      Prefix Verb   URI Pattern                   Controller#Action
+#    Prefix Verb   URI Pattern                   Controller#Action
 #      signup GET    /signup(.:format)             users#new
 #             POST   /signup(.:format)             users#create
 #   show_user GET    /vagabonds/:id(.:format)      users#show
 #   edit_user GET    /vagabonds/:id/edit(.:format) users#edit
 # update_user PATCH  /vagabonds/:id(.:format)      users#update
 # delete_user DELETE /vagabonds/:id(.:format)      users#destroy
-#             GET    /cities/:id/new(.:format)     posts#new
+#    new_post GET    /cities/:id/new(.:format)     posts#new
 # delete_post DELETE /posts/:id(.:format)          posts#destroy
 #       posts GET    /posts(.:format)              posts#index
 #             POST   /posts(.:format)              posts#create
