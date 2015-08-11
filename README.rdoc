@@ -2,5 +2,6 @@
 
 Have you ever wanted an easy way to share travel tips? Look no further... Travel blog is a fully-featured, robust, cloud-based web app that brings the sage wisdom of worldly travelers to the tips of your fingers.
 
+Delete this later, checking git 
 Created by Tim Festa, Zoe Foss, Monika Chumber, and Ian Civgin
 ©2015
