@@ -24,7 +24,6 @@ class UsersController < ApplicationController
 
   def update
     user = User.find_by_id(params[:id])
-        p "user ID= #{user.id}"
     user.update_attributes(user_params)
     redirect_to "/vagabonds/#{user[:id]}"
   end

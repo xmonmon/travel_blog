@@ -21,10 +21,14 @@ class PostsController < ApplicationController
   end
 
   def update
+    post = Post.find_by_id(params[:id])
+    post.update_attributes(post_params)
+    redirect_to "/posts/#{post[:id]}"
   end
 
   def destroy
-    redirect_to "/vagabonds/<%= #{session[:user_id]} %>"
+    Post.destroy(params[:id])
+    redirect_to "/vagabonds/#{session[:user_id]}"
   end
 
   def index
