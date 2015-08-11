@@ -9,7 +9,8 @@ patch "/profile", to: "users#update", as: "update_user"
 delete "/profile", to: "users#destroy", as: "delete_user"
 
 #posts routes
-resources :posts
+get "/cities/:id/new", to: "posts#new"
+resources :posts, except: [:new]
 
 
 #cities routes

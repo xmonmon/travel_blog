@@ -1,0 +1,19 @@
+<h1>Create a new post</h1>
+<p><%= @post.city_id %></p>
+<p>Use this form...</p>
+<%= form_for @post, url:{action: "create"} do |f|  %>
+
+<%= f.label :title %>
+<%= f.text_field :title %>
+
+<%= f.label :body %>
+<%= f.text_field :body %>
+
+<%= f.label :city_id %>
+<%= f.text_field :city_id %>
+
+
+
+<%= f.submit "Submit Post" %>
+
+<% end %>

@@ -1,0 +1,11 @@
+<h1><%= @city.name %></h1>
+<p>Find me in app/views/cities/show.html.erb</p>
+<p>lat & lng</p>
+<%= @city.latitude %>
+<%= @city.longitude %>
+<br>
+<% @city.posts.each do |post| %>
+	<%= post.title %>
+	<%= post.body %>
+	<%= post.user %>
+<% end %>

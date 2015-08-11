@@ -1,4 +1,12 @@
 <h1>Hi <%= @user.full_name %></h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<p>This is your user profile</p>
+<%= @user.current_city %>
+<%= @user.created_at %>
+
 <%= link_to "Edit", profile_edit_path %>
 <%= link_to "Delete", delete_user_path, method: :delete %>
+<br>
+<% @user.posts.each do |post| %>
+<%= post.title %>
+<%= link_to "View Post", post_path(post) %><br>
+	<% end %>
