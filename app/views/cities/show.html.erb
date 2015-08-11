@@ -1,13 +1,18 @@
-<div class="jumbotron">
-	<img style="width: 100%" src="<%= @city.photo %>" />
+<div class="jumbotron" style="background-image:url(<%= @city.photo %>)" style="image-width:100%">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-10 col-sm-offset-1">
+				<h1><%= @city.name %> <%= link_to "Add New Post", new_post_path(@city.id), class:"btn-sm btn-default pull-right" %></h1>
+				<p>Latitude: <%= @city.latitude %> & Longitude: <%= @city.longitude %> </p>
+				<br>
+			</div>
+		</div>
+	</div>
 </div>
-
 <div class="container">	
 	<div class="row">
 		<div class="col-sm-10 col-sm-offset-1">
-			<h1><%= @city.name %> <%= link_to "Add New Post", new_post_path(@city.id), class:"btn-sm btn-default pull-right" %></h1>
-			<p>Latitude: <%= @city.latitude %> & Longitude: <%= @city.longitude %> </p>
-			<br>
+
 			<% @city.posts.each do |post| %>
 				<div class="panel panel-default">
 				  <div class="panel-body">
