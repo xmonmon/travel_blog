@@ -1,12 +1,26 @@
-<h1>Hi <%= @user.full_name %></h1>
-<p>This is your user profile</p>
-<%= @user.current_city %>
-<%= @user.created_at %>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-10 col-sm-offset-1">	
+		<h1>Hi <%= @user.full_name %> </h1>
+			<p><%= @user.current_city %></p> 
+			<p> You have been a member since: <%= @user.created_at %></p>
+			<%= link_to "Edit", edit_user_path, class:"btn btn-default" %>
+			<%= link_to "Delete", delete_user_path, method: :delete, class:"btn btn-default" %>
+		<br>
+		<br>
+		</div>	
+	</div>
+	<div class="row">
+		<div class="col-sm-6 col-sm-offset-3">
+			<% @user.posts.each do |post| %>
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<%= post.title %>
+					<%= link_to "View Post", post_path(post), class:"pull-right" %><br>
+				</div>
+			</div>
+			<% end %>
+		</div>
+	</div>
+</div>
 
-<%= link_to "Edit", edit_user_path %>
-<%= link_to "Delete", delete_user_path, method: :delete %>
-<br>
-<% @user.posts.each do |post| %>
-<%= post.title %>
-<%= link_to "View Post", post_path(post) %><br>
-	<% end %>
