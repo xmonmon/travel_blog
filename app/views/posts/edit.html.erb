@@ -1,2 +1,19 @@
-<h1>Posts#edit</h1>
-<p>Find me in app/views/posts/edit.html.erb</p>
+<h1>Edit Post</h1>
+<p><%= @post.city_id %></p>
+<p>Use this form...</p>
+<%= form_for @post, url:{action: "update"} do |f|  %>
+
+<%= f.label :title %>
+<%= f.text_field :title %>
+
+<%= f.label :body %>
+<%= f.text_field :body %>
+
+<%= f.label :city_id %>
+<%= f.text_field :city_id %>
+
+
+
+<%= f.submit "Submit Changes" %>
+
+<% end %>

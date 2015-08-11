@@ -3,7 +3,7 @@
 <%= @user.current_city %>
 <%= @user.created_at %>
 
-<%= link_to "Edit", profile_edit_path %>
+<%= link_to "Edit", edit_user_path %>
 <%= link_to "Delete", delete_user_path, method: :delete %>
 <br>
 <% @user.posts.each do |post| %>
