@@ -24,6 +24,7 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    redirect_to "/vagabonds/<%= #{session[:user_id]} %>"
   end
 
   def index
