@@ -5,3 +5,7 @@ Have you ever wanted an easy way to share travel tips? Look no further... Travel
 Delete this later, checking git 
 Created by Tim Festa, Zoe Foss, Monika Chumber, and Ian Civgin
 ©2015
+
+==== Getting Started with seed Data
+
+On your local terminal. Run +rake db:migrate:reset+ and then +rake db:seed+. This will generate some great seed data for you :)

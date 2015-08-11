@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8">
 
-<title>class UsersController - Rails Application Documentation</title>
+<title>class PostsController - Rails Application Documentation</title>
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "./";
@@ -76,6 +76,8 @@
     
     <li ><a href="#method-i-edit">#edit</a>
     
+    <li ><a href="#method-i-index">#index</a>
+    
     <li ><a href="#method-i-new">#new</a>
     
     <li ><a href="#method-i-show">#show</a>
@@ -88,9 +90,9 @@
   </div>
 </nav>
 
-<main role="main" aria-labelledby="class-UsersController">
-  <h1 id="class-UsersController" class="class">
-    class UsersController
+<main role="main" aria-labelledby="class-PostsController">
+  <h1 id="class-PostsController" class="class">
+    class PostsController
   </h1>
 
   <section class="description">
@@ -135,15 +137,12 @@
 
           
           <div class="method-source-code" id="create-source">
-            <pre><span class="ruby-comment"># File app/controllers/users_controller.rb, line 7</span>
+            <pre><span class="ruby-comment"># File app/controllers/posts_controller.rb, line 8</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">create</span>
-  <span class="ruby-identifier">user</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">user_params</span>)
-  <span class="ruby-keyword">if</span> <span class="ruby-identifier">user</span>.<span class="ruby-identifier">photo</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;&quot;</span>
-    <span class="ruby-identifier">user</span>.<span class="ruby-identifier">photo</span> = <span class="ruby-string">&quot;https://i.imgur.com/GceZM8o.png&quot;</span>
-  <span class="ruby-keyword">end</span>
-  <span class="ruby-identifier">user</span>.<span class="ruby-identifier">save</span>
-  <span class="ruby-identifier">session</span>[<span class="ruby-value">:user_id</span>] = <span class="ruby-identifier">user</span>.<span class="ruby-identifier">id</span>
-  <span class="ruby-identifier">redirect_to</span> <span class="ruby-node">&quot;/vagabonds/#{user[:id]}&quot;</span>
+  <span class="ruby-identifier">post</span> = <span class="ruby-constant">Post</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">post_params</span>)
+  <span class="ruby-identifier">post</span>.<span class="ruby-identifier">user_id</span> = <span class="ruby-identifier">session</span>[<span class="ruby-value">:user_id</span>]
+  <span class="ruby-identifier">post</span>.<span class="ruby-identifier">save</span>
+  <span class="ruby-identifier">redirect_to</span> <span class="ruby-node">&quot;/cities/#{post.city_id}&quot;</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
           
@@ -174,11 +173,10 @@
 
           
           <div class="method-source-code" id="destroy-source">
-            <pre><span class="ruby-comment"># File app/controllers/users_controller.rb, line 31</span>
+            <pre><span class="ruby-comment"># File app/controllers/posts_controller.rb, line 29</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">destroy</span>
-  <span class="ruby-identifier">user</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find_by_id</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
-  <span class="ruby-identifier">user</span>.<span class="ruby-identifier">destroy</span>
-  <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">root_path</span>
+  <span class="ruby-constant">Post</span>.<span class="ruby-identifier">destroy</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+  <span class="ruby-identifier">redirect_to</span> <span class="ruby-node">&quot;/vagabonds/#{session[:user_id]}&quot;</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
           
@@ -209,9 +207,41 @@
 
           
           <div class="method-source-code" id="edit-source">
-            <pre><span class="ruby-comment"># File app/controllers/users_controller.rb, line 21</span>
+            <pre><span class="ruby-comment"># File app/controllers/posts_controller.rb, line 19</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">edit</span>
-  <span class="ruby-ivar">@user</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find_by_id</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+  <span class="ruby-ivar">@post</span> = <span class="ruby-constant">Post</span>.<span class="ruby-identifier">find_by_id</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-index" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">index</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="index-source">
+            <pre><span class="ruby-comment"># File app/controllers/posts_controller.rb, line 34</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">index</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
           
@@ -242,9 +272,10 @@
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File app/controllers/users_controller.rb, line 3</span>
+            <pre><span class="ruby-comment"># File app/controllers/posts_controller.rb, line 3</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">new</span>
-  <span class="ruby-ivar">@user</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">new</span>  
+  <span class="ruby-ivar">@post</span> = <span class="ruby-constant">Post</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@post</span>.<span class="ruby-identifier">city_id</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>]
 <span class="ruby-keyword">end</span></pre>
           </div>
           
@@ -275,9 +306,9 @@
 
           
           <div class="method-source-code" id="show-source">
-            <pre><span class="ruby-comment"># File app/controllers/users_controller.rb, line 17</span>
+            <pre><span class="ruby-comment"># File app/controllers/posts_controller.rb, line 15</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">show</span>
-  <span class="ruby-ivar">@user</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find_by_id</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+  <span class="ruby-ivar">@post</span> = <span class="ruby-constant">Post</span>.<span class="ruby-identifier">find_by_id</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
 <span class="ruby-keyword">end</span></pre>
           </div>
           
@@ -308,11 +339,11 @@
 
           
           <div class="method-source-code" id="update-source">
-            <pre><span class="ruby-comment"># File app/controllers/users_controller.rb, line 25</span>
+            <pre><span class="ruby-comment"># File app/controllers/posts_controller.rb, line 23</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">update</span>
-  <span class="ruby-identifier">user</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find_by_id</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
-  <span class="ruby-identifier">user</span>.<span class="ruby-identifier">update_attributes</span>(<span class="ruby-identifier">user_params</span>)
-  <span class="ruby-identifier">redirect_to</span> <span class="ruby-node">&quot;/vagabonds/#{user[:id]}&quot;</span>
+  <span class="ruby-identifier">post</span> = <span class="ruby-constant">Post</span>.<span class="ruby-identifier">find_by_id</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+  <span class="ruby-identifier">post</span>.<span class="ruby-identifier">update_attributes</span>(<span class="ruby-identifier">post_params</span>)
+  <span class="ruby-identifier">redirect_to</span> <span class="ruby-node">&quot;/posts/#{post[:id]}&quot;</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
           
