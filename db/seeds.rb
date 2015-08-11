@@ -10,7 +10,7 @@ User.create(first_name: 'Ian', last_name: 'Civgin', email: 'ian@test.com', passw
 User.create(first_name: 'Monika', last_name: 'Chumber', email: 'monika@test.com', password: 'test', current_city: 'San Francisco')
 User.create(first_name: 'Demo', last_name: 'Demo', email: 'demo@demo.com', password: 'demo', current_city: 'San Francisco')
 
-City.create(name: 'San Francisco', latitude: '37.7833', longitude: '-122.4167')
+City.create(name: 'San Francisco', latitude: '37.7833', longitude: '-122.4167', photo: 'https://upload.wikimedia.org/wikipedia/commons/c/ce/San_Francisco_at_Sunset_Panorama.jpg')
 
 Post.create(title: 'Best place to eat: sushi', body: 'OMG, there is this place downtown called Sushirrrrrrito. It is like a sushi roll in a burrito. CRAZY!!! I need to explore this food group further and you should too.', user_id: '1', city_id: '1')
 Post.create(title: 'Best airport: SFO or OAK', body: 'MOS DEF SFO. It is the tits.', user_id: '1', city_id: '1')
