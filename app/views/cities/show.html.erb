@@ -1,11 +1,25 @@
-<h1><%= @city.name %></h1>
-<p>Find me in app/views/cities/show.html.erb</p>
-<p>lat & lng</p>
-<%= @city.latitude %>
-<%= @city.longitude %>
-<br>
-<% @city.posts.each do |post| %>
-	<%= post.title %>
-	<%= post.body %>
-	<%= post.user %>
-<% end %>
+<div class="jumbotron">
+	<img style="width: 100%" src="<%= @city.photo %>" />
+</div>
+
+<div class="container">	
+	<div class="row">
+		<div class="col-sm-10 col-sm-offset-1">
+			<h1><%= @city.name %></h1>
+
+			<p>Latitude: <%= @city.latitude %> & Longitude: <%= @city.longitude %></p>
+			<br>
+			<% @city.posts.each do |post| %>
+
+				<div class="panel panel-default">
+				  <div class="panel-body">
+				    <h4><%= post.title %></h4>
+				    <h5>Authored by: <%= post.user.first_name %></h5><br>
+				    <p><%= post.body %></p>
+				    <%= link_to "View Post", post_path(post) %>
+				  </div>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>
