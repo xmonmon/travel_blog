@@ -1,5 +1,5 @@
 body {
-  background-color:white;
+  background-color: #FEFDFC;
 }
 .jumbotron{
   background-size:cover;
@@ -7,6 +7,14 @@ body {
   color:white;
   margin-top: 0;
 }
+
+.jumbotron.homepage h1 {
+	text-align: center
+}
+/*.jumbotron.image {
+	background-image: url(http://i.imgur.com/QzxVBRR.jpg);
+	max-height: 100%;
+}*/
 .navbar {
   margin-bottom:0; 
 }
