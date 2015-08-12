@@ -1,15 +1,23 @@
 class PostsController < ApplicationController
   
   def new
-    @post = Post.new
-    @post.city_id = params[:id]
+    if current_user
+      @post = Post.new
+      @post.city_id = params[:id]
+    else
+      redirect_to login_path
+    end
   end
 
   def create
-    post = Post.new(post_params)
-    post.user_id = session[:user_id]
-    post.save
-    redirect_to "/cities/#{post.city_id}"
+    if current_user
+      post = Post.new(post_params)
+      post.user_id = session[:user_id]
+      post.save
+      redirect_to "/cities/#{post.city_id}"
+    else
+      redirect_to login_path
+    end
   end
 
   def show
@@ -18,17 +26,29 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find_by_id(params[:id])
+    unless current_user && current_user[:id] == @post[:user_id] 
+      redirect_to root_path
+    end
   end
 
   def update
     post = Post.find_by_id(params[:id])
-    post.update_attributes(post_params)
-    redirect_to "/posts/#{post[:id]}"
+    if current_user && current_user[:id] == post[:user_id]
+      post.update_attributes(post_params)
+      redirect_to "/posts/#{post[:id]}"
+    else
+      redirect_to root_path
+    end
   end
 
   def destroy
-    Post.destroy(params[:id])
-    redirect_to "/vagabonds/#{session[:user_id]}"
+    post = Post.find_by_id(params[:id])
+    if current_user && current_user[:id] == post[:user_id]
+      post.destroy
+      redirect_to "/vagabonds/#{session[:user_id]}"
+    else
+      redirect_to "http://askshialabeouf.bitballoon.com/"
+    end
   end
 
   def index

@@ -1,17 +1,25 @@
 class UsersController < ApplicationController
   
   def new
+    if !current_user
     @user = User.new  
+    else
+      redirect_to "/vagabonds/#{current_user[:id]}"
+    end
   end
 
   def create
-    user = User.new(user_params)
-    if user.photo == ""
-      user.photo = "https://i.imgur.com/GceZM8o.png"
+    if !current_user
+      user = User.new(user_params)
+      if user.photo == ""
+        user.photo = "https://i.imgur.com/GceZM8o.png"
+      end
+      user.save
+      session[:user_id] = user.id
+      redirect_to "/vagabonds/#{user[:id]}"
+    else
+      redirect_to "/vagabonds/#{current_user[:id]}"
     end
-    user.save
-    session[:user_id] = user.id
-    redirect_to "/vagabonds/#{user[:id]}"
   end
 
   def show
@@ -19,19 +27,31 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find_by_id(params[:id])
+    if current_user && current_user[:id].to_s == params[:id]
+      @user = User.find_by_id(params[:id])
+    else
+      redirect_to root_path
+    end
   end
 
   def update
-    user = User.find_by_id(params[:id])
-    user.update_attributes(user_params)
-    redirect_to "/vagabonds/#{user[:id]}"
+    if current_user && current_user[:id].to_s == params[:id]
+      user = User.find_by_id(params[:id])
+      user.update_attributes(user_params)
+      redirect_to "/vagabonds/#{user[:id]}"
+    else
+      redirect_to root_path
+    end
   end
 
   def destroy
-    user = User.find_by_id(params[:id])
-    user.destroy
-    redirect_to root_path
+    if current_user && current_user[:id].to_s == params[:id]
+      user = User.find_by_id(params[:id])
+      user.destroy
+      redirect_to root_path
+    else
+      redirect_to "http://askshialabeouf.bitballoon.com/"
+    end
   end
 
   private

@@ -1,7 +1,11 @@
 class SessionsController < ApplicationController
   
   def new
-    render :new
+    if !current_user 
+      render :new
+    else 
+      redirect_to "/vagabonds/#{current_user[:id]}"
+    end
   end
 
   def create
