@@ -15,7 +15,6 @@ City.create(name: 'London', latitude: '51.5072', longitude: '-0.1275', photo: 'h
 City.create(name: 'Gibraltar', latitude: '36.1430', longitude: '-5.3530', photo: 'http://www.lazyhiker.com/photos/2010_moor/highlights/panorama/20101106155610_view--gibraltar_monkey.jpg')
 
 
-
 Post.create(title: 'Best place to eat: sushi', body: 'OMG, there is this place downtown called Sushirrrrrrito. It is like a sushi roll in a burrito. CRAZY!!! I need to explore this food group further and you should too.', user_id: '1', city_id: '1')
 Post.create(title: 'Best airport: SFO or OAK', body: 'MOS DEF SFO. It is the tits.', user_id: '1', city_id: '1')
 

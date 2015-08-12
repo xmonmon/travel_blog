@@ -1,25 +1,35 @@
-<h1>Sign up!</h1>
-<p>Use this form...</p>
-<%= form_for @user, url:{action: "create"} do |f|  %>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-6 col-sm-offset-3">
 
-<%= f.label :first_name %>
-<%= f.text_field :first_name %>
+			<center>
+				<h1>Sign up!</h1>
+			</center>
+			<%= form_for @user, url:{action: "create"}, class: "form-group" do |f|  %>
 
-<%= f.label :last_name %>
-<%= f.text_field :last_name %>
+			<%= f.label :first_name %>
+			<%= f.text_field :first_name, placeholder: "First Name", class: "form-control", :required => true, :autofocus => true %><br>
 
-<%= f.label :email %>
-<%= f.text_field :email %>
+			<%= f.label :last_name %>
+			<%= f.text_field :last_name, placeholder: "Last Name", class: "form-control", :required => true %><br>
 
-<%= f.label :current_city %>
-<%= f.text_field :current_city %>
+			<%= f.label :email %>
+			<%= f.text_field :email, placeholder: "Email", class: "form-control", :required => true %><br>
 
-<%= f.label :password %>
-<%= f.text_field :password %>
+			<%= f.label :current_city %>
+			<%= f.text_field :current_city, placeholder: "Current City", class: "form-control", :required => true %><br>
 
-<%= f.label :photo %>
-<%= f.text_field :photo %>
+			<%= f.label :password %>
+			<%= f.text_field :password, placeholder: "Password", class: "form-control", :required => true %><br>
 
-<%= f.submit "Create User" %>
+			<%= f.label :photo %>
+			<%= f.text_field :photo, placeholder: "Photo URL", class: "form-control" %><br>
+			<center>
+				<%= f.submit "Create User", class: "btn btn-primary" %>
+			</center>
 
-<% end %>
+			<% end %>
+
+		</div>
+	</div>
+</div>
