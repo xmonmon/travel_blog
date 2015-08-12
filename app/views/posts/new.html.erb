@@ -1,19 +1,27 @@
-<h1>Create a new post</h1>
-<p><%= @post.city_id %></p>
-<p>Use this form...</p>
-<%= form_for @post, url:{action: "create"} do |f|  %>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-6 col-sm-offset-3">
 
-<%= f.label :title %>
-<%= f.text_field :title %>
+			<center>
+				<h1>Create a New Post!</h1>
+				<p>Authored by: <%= current_user[:first_name] %> | Posting in <%= @post.city.name %></p>
+			</center>
 
-<%= f.label :body %>
-<%= f.text_area :body %>
+			<%= form_for @post, url:{action: "create"}, class: "form-group" do |f|  %>
 
-<%= f.label :city_id %>
-<%= f.text_field :city_id %>
+			<%= f.label :title %>
+			<%= f.text_field :title, placeholder: "Title", class: "form-control", :required => true, :autofocus => true %><br>
 
+			<%= f.label :body %>
+			<%= f.text_area :body, placeholder: "Your Content Here", class: "form-control", :required => true %><br>
 
+			<%= f.label :city_id %>
+			<%= f.text_field :city_id, placeholder: "City ID", class: "form-control", :required => true %><br>
 
-<%= f.submit "Submit Post" %>
-
-<% end %>
+			<center>
+				<%= f.submit "Submit Post", class: "btn btn-primary" %>
+			</center>
+			<% end %>
+		</div>
+	</div>
+</div>
