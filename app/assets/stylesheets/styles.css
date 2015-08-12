@@ -1,0 +1,22 @@
+body {
+  background-color: #FEFDFC;
+}
+
+.jumbotron{
+  background-size:cover;
+  background-repeat: no-repeat;
+  color:white;
+  margin-top: 0;
+}
+.homepage {
+  background-image:url("http://i.imgur.com/ix4OvHL.png");
+  max-width: 100%;
+}
+
+.jumbotron.homepage h1 {
+	text-align: center
+}
+
+.navbar {
+  margin-bottom:0; 
+}
