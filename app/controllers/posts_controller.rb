@@ -12,12 +12,22 @@ class PostsController < ApplicationController
   def create
     if current_user
       post = Post.new(post_params)
-      post.user_id = session[:user_id]
-      post.save
-      redirect_to "/cities/#{post.city_id}"
+
+      if City.exists?(post[:city_id])
+        post.user_id = session[:user_id]
+        if post.save
+          redirect_to "/cities/#{post.city_id}"
+        else
+          redirect_to new_post_path(post[:city_id]), notice: "TITLE IS WAAAY TOO LONG"
+        end
+      else
+        redirect_to root_path
+      end
+
     else
       redirect_to login_path
     end
+
   end
 
   def show
