@@ -11,15 +11,15 @@
 </div>
 <div class="container">	
 	<div class="row">
-		<div class="col-sm-10 col-sm-offset-1">
+		<div class="col-sm-8 col-sm-offset-2">
 
-			<% @city.posts.each do |post| %>
+			<% @city.posts.reverse.each do |post| %>
 				<div class="panel panel-default">
 				  <div class="panel-body">
 				    <h4><%= post.title %></h4>
+				    <%= link_to "View Post", post_path(post), class:"pull-right" %>
 				    <h5>Authored by: <%= post.user.first_name %></h5><br>
 				    <p><%= post.body %></p>
-				    <%= link_to "View Post", post_path(post) %>
 				  </div>
 				</div>
 			<% end %>
