@@ -16,7 +16,7 @@
 			<% @city.posts.reverse.each do |post| %>
 				<div class="panel panel-default">
 				  <div class="panel-body">
-				    <h4><%= post.title %></h4>
+				    <h3><%= post.title %></h3>
 				    <%= link_to "View Post", post_path(post), class:"pull-right" %>
 				    <h5>Authored by: <%= post.user.first_name %></h5><br>
 				    <p><%= post.body %></p>
