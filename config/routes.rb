@@ -48,3 +48,4 @@ end
 #       logout GET    /logout(.:format)         sessions#destroy
 #         root GET    /                         pages#index
 
+  
