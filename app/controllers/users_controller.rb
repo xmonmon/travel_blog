@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   
   def new
     if !current_user
@@ -14,9 +15,12 @@ class UsersController < ApplicationController
       if user.photo == ""
         user.photo = "https://i.imgur.com/GceZM8o.png"
       end
-      user.save
-      session[:user_id] = user.id
-      redirect_to "/vagabonds/#{user[:id]}"
+      if user.save
+        session[:user_id] = user.id
+        redirect_to "/vagabonds/#{user[:id]}"
+      else
+        redirect_to signup_path, notice: "YOU SUCK, you're not unique enough."
+      end
     else
       redirect_to "/vagabonds/#{current_user[:id]}"
     end
