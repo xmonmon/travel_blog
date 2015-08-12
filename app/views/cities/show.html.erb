@@ -1,0 +1,28 @@
+<div class="jumbotron" style="background-image:url(<%= @city.photo %>)" style="image-width:100%">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-10 col-sm-offset-1">
+				<h1><%= @city.name %> <%= link_to "Add New Post", new_post_path(@city.id), class:"btn-sm btn-default pull-right" %></h1>
+				<p>Latitude: <%= @city.latitude %> & Longitude: <%= @city.longitude %> </p>
+				<br>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container">	
+	<div class="row">
+		<div class="col-sm-10 col-sm-offset-1">
+
+			<% @city.posts.each do |post| %>
+				<div class="panel panel-default">
+				  <div class="panel-body">
+				    <h4><%= post.title %></h4>
+				    <h5>Authored by: <%= post.user.first_name %></h5><br>
+				    <p><%= post.body %></p>
+				    <%= link_to "View Post", post_path(post) %>
+				  </div>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>
