@@ -17,9 +17,11 @@ class UsersController < ApplicationController
       end
       if user.save
         session[:user_id] = user.id
+        flash[:notice] = "Yay! Profile created!"
         redirect_to "/vagabonds/#{user[:id]}"
       else
-        redirect_to signup_path, notice: "YOU SUCK, you're not unique enough."
+        flash[:error] = user.errors.full_messages.join(", ")
+        redirect_to signup_path
       end
     else
       redirect_to "/vagabonds/#{current_user[:id]}"
@@ -60,7 +62,7 @@ class UsersController < ApplicationController
 
   private
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :current_city, :email, :password, :photo)
+      params.require(:user).permit(:first_name, :last_name, :current_city, :email, :password, :photo, :avatar)
     end
 
 end
