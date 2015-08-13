@@ -5,7 +5,7 @@
 			<center>
 				<h1>Sign up!</h1>
 			</center>
-			<%= form_for @user, url:{action: "create"}, class: "form-group" do |f|  %>
+			<%= form_for @user, url:{action: "create"}, :html => { :multipart => true }, class: "form-group" do |f|  %>
 
 			<%= f.label :first_name %>
 			<%= f.text_field :first_name, placeholder: "First Name", class: "form-control", :required => true, :autofocus => true %><br>
@@ -22,16 +22,16 @@
 			<%= f.label :password %>
 			<%= f.text_field :password, placeholder: "Password", class: "form-control", :required => true %><br>
 
-			<%= f.label :photo %>
-			<%= f.text_field :photo, placeholder: "Photo URL", class: "form-control" %><br>
+			<%= f.file_field :avatar %>
+
 			<center>
 				<%= f.submit "Create User", class: "btn btn-primary" %>
 			</center>
 
 			<% end %>
 			<% flash.each do |name, msg| -%>
-				<%= content_tag :div, msg, class: name %>
-			<% end -%>
+				<%= content_tag :div, msg, class: "alert #{name == 'error' ? 'alert-danger' : 'alert-notice'}" %>
+			<% end %>
 
 		</div>
 	</div>
