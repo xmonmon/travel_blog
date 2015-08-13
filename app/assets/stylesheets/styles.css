@@ -1,5 +1,6 @@
 body {
   background-color: #FEFDFC;
+
 /*  font-family: 'Roboto', sans-serif;*/
 }
 
@@ -22,7 +23,8 @@ h3 {
 .jumbotron{
   background-size:cover;
   background-repeat: no-repeat;
-  color: white;
+
+  color:white;
   margin-top: 0;
 }
 
@@ -31,10 +33,19 @@ h3 {
   max-width: 100%;
 }
 
-.jumbotron.homepage {
-  text-align: center
+.jumbotron.homepage h1 {
+	text-align: center
 }
 
 .navbar {
   margin-bottom:0; 
+
 }
+
+.navbar-brand {
+  padding: 0px;
+  padding-left: 5px;
+}
+
+
+
