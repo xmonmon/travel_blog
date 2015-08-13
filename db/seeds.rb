@@ -6,9 +6,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-User.create(first_name: 'Ian', last_name: 'Civgin', email: 'ian@test.com', password: 'test', current_city: 'San Francisco')
-User.create(first_name: 'Monika', last_name: 'Chumber', email: 'monika@test.com', password: 'test', current_city: 'San Francisco')
-User.create(first_name: 'Demo', last_name: 'Demo', email: 'demo@demo.com', password: 'demo', current_city: 'San Francisco')
+User.create(first_name: 'Ian', last_name: 'Civgin', email: 'ian@test.com', password: 'test', current_city: 'San Francisco', avatar: 'https://upload.wikimedia.org/wikipedia/commons/7/72/1,3,5-trichlorobenzene.png')
+User.create(first_name: 'Monika', last_name: 'Chumber', email: 'monika@test.com', password: 'test', current_city: 'San Francisco', avatar: 'https://upload.wikimedia.org/wikipedia/commons/7/72/1,3,5-trichlorobenzene.png')
+User.create(first_name: 'Demo', last_name: 'Demo', email: 'demo@demo.com', password: 'demo', current_city: 'San Francisco', avatar: 'https://upload.wikimedia.org/wikipedia/commons/7/72/1,3,5-trichlorobenzene.png')
 
 City.create(name: 'San Francisco', latitude: '37.7833', longitude: '-122.4167', photo: 'https://upload.wikimedia.org/wikipedia/commons/c/ce/San_Francisco_at_Sunset_Panorama.jpg')
 City.create(name: 'London', latitude: '51.5072', longitude: '-0.1275', photo: 'http://www.7littlemoments.com/images/products/panorama_london_full.jpg')
