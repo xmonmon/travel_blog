@@ -3,6 +3,7 @@
 		<div class="col-sm-6 col-sm-offset-3">
 			<h1><%= @post.title %></h1>
 			<p><%= @post.body %></p>
+			<%= link_to "Add comment", new_comment_path(@post) %>
 			<% if current_user && current_user[:id] == @post[:user_id] %>
 				<%= link_to "Edit", edit_post_path %>
 				<%= link_to "Delete",  @post,  method: :delete, data: { confirm: 'Are you sure?' } %>
