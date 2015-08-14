@@ -46,7 +46,7 @@ Post.create(title: 'I cant even', body: "Fixie American Apparel mixtape, fanny p
 # Post.create(title: 'I cant even', body: "Fixie American Apparel mixtape, fanny pack direct trade heirloom banh mi cornhole. Brunch tofu selfies, blog cray ennui iPhone hoodie fashion axe authentic Bushwick Echo Park mlkshk Vice. Master cleanse mixtape cornhole, deep v sartorial Williamsburg Banksy hoodie tousled PBR&B gentrify cardigan polaroid cliche fanny pack. Polaroid vegan Portland plaid pickled. Wes Anderson cornhole twee, selvage chambray mumblecore plaid organic occupy authentic. Swag drinking vinegar chambray DIY, trust fund stumptown you probably haven't heard of them letterpress sustainable brunch next level organic. Etsy drinking vinegar 90's deep v keytar Williamsburg.", user_id: '3', city_id: '8')
 # Post.create(title: 'u r so cool, body: "Fixie American Apparel mixtape, fanny pack direct trade heirloom banh mi cornhole. Brunch tofu selfies, blog cray ennui iPhone hoodie fashion axe authentic Bushwick Echo Park mlkshk Vice. Master cleanse mixtape cornhole, deep v sartorial Williamsburg Banksy hoodie tousled PBR&B gentrify cardigan polaroid cliche fanny pack. Polaroid vegan Portland plaid pickled. Wes Anderson cornhole twee, selvage chambray mumblecore plaid organic occupy authentic. Swag drinking vinegar chambray DIY, trust fund stumptown you probably haven't heard of them letterpress sustainable brunch next level organic. Etsy drinking vinegar 90's deep v keytar Williamsburg.", user_id: '4', city_id: '8')
 
-<<<<<<< HEAD
+
 Post.create(title: 'Best Coffee Joint!', body: "Okay, so in the Financial District there's this place called Blue Bottle! It's freaking amazing! Not only is the coffee amazing, but they have amazing Hot Chocolate! You HAVE to go here!", user_id: '2', city_id: '1')
 Post.create(title: 'Worst Coffee Joint!', body: "Starbucks.  All they ever do is make bad coffee. Literally, there's never enough caramel in my macchiato, even when I say 'extra', ugh so annoying.", user_id: '2', city_id: '1')
 
@@ -57,5 +57,4 @@ Post.create(title: 'Worst Coffee Joint!', body: "Starbucks.  All they ever do is
 
 Post.create(title: 'Best Place to Visit!', body: "Twin Peaks is amazing! Not only do you get an amazing view, but there's also a swing there that EVERYONE takes pictures on, totally Instafamous.", user_id: '2', city_id: '2')
 Post.create(title: 'Worst Place to Visit!', body: "Golden Gate Park. Like, I totally get that it's an amazing place, but C'MON the wind!? My hair gets sooo messed up. ugh, never coming back.", user_id: '2', city_id: '2')
-=======
->>>>>>> e7118f9cb500732b2a7547b25e22e98e85663623
+
