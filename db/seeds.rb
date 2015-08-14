@@ -13,16 +13,16 @@ User.create(first_name: 'Adam', last_name: 'Braus', email: 'braus@test.com', pas
 User.create(first_name: 'Test', last_name: 'Test', email: 'test@demo.com', password: 'demo', current_city: 'San Francisco', avatar: 'https://s-media-cache-ak0.pinimg.com/736x/dd/49/dd/dd49dd83e894321a9402465c98ebc386.jpg')
 User.create(first_name: 'Zoe', last_name: 'Foss', email: 'zoe@test.com', password: 'test', current_city: 'London', avatar: 'https://s-media-cache-ak0.pinimg.com/736x/dd/49/dd/dd49dd83e894321a9402465c98ebc386.jpg')
 
-City.create(name: 'San Francisco', latitude: '37.7833', longitude: '-122.4167', photo: 'https://upload.wikimedia.org/wikipedia/commons/c/ce/San_Francisco_at_Sunset_Panorama.jpg')
-City.create(name: 'London', latitude: '51.5072', longitude: '-0.1275', photo: 'http://www.7littlemoments.com/images/products/panorama_london_full.jpg')
-City.create(name: 'Gibraltar', latitude: '36.1430', longitude: '-5.3530', photo: 'http://www.lazyhiker.com/photos/2010_moor/highlights/panorama/20101106155610_view--gibraltar_monkey.jpg')
-City.create(name: 'Mumbai', latitude: '18.9750', longitude: '72.8258', photo: 'https://www.iaf-world.org/site/sites/default/files/events/mumbai-19-free-image.jpg')
-City.create(name: 'Austin', latitude: '30.2500', longitude: '-97.7500', photo: 'https://files.slack.com/files-pri/T0351JZQ0-F093AU7D3/austin.jpg')
-City.create(name: 'Prague', latitude: '50.0833', longitude: '14.4167', photo: 'https://files.slack.com/files-pri/T0351JZQ0-F093AD17S/praguebanner.jpg')
-City.create(name: 'Barcelona', latitude: '41.3833', longitude: '2.1833', photo: 'http://digiday.com/wp-content/uploads/2014/05/w-hotel-barcelona.main_.jpg')
-City.create(name: 'Rome', latitude: '41.9000', longitude: '12.5000', photo: 'http://www.blackcarautonoleggio.com/wordpress/wp-content/uploads/2015/03/rome1.jpg')
-City.create(name: 'Dubai', latitude: '25.2048', longitude: '55.2708', photo: 'http://cache-graphicslib.viator.com/graphicslib/destination/dubai-145882.jpg')
-City.create(name: 'Interlaken', latitude: '46.6833', longitude: '7.8500', photo: 'https://cheaphotelsme.files.wordpress.com/2013/02/the-lakeshore-path-interlaken.jpg')
+City.create(name: 'San Francisco', latitude: '37.7833', longitude: '-122.4167', photo: 'http://i.imgur.com/RUULF9F.jpg')
+City.create(name: 'London', latitude: '51.5072', longitude: '-0.1275', photo: 'http://i.imgur.com/PNoO5bV.jpg')
+City.create(name: 'Gibraltar', latitude: '36.1430', longitude: '-5.3530', photo: 'http://i.imgur.com/pqcJR3u.jpg')
+City.create(name: 'Mumbai', latitude: '18.9750', longitude: '72.8258', photo: 'http://i.imgur.com/dnFfjLP.jpg')
+City.create(name: 'Austin', latitude: '30.2500', longitude: '-97.7500', photo: 'http://i.imgur.com/Qjb6E2R.jpg')
+City.create(name: 'Prague', latitude: '50.0833', longitude: '14.4167', photo: 'http://i.imgur.com/wLR2nFQ.jpg')
+City.create(name: 'Barcelona', latitude: '41.3833', longitude: '2.1833', photo: 'http://i.imgur.com/7A8TxIH.jpg')
+City.create(name: 'Rome', latitude: '41.9000', longitude: '12.5000', photo: 'http://i.imgur.com/7f75fUK.jpg')
+City.create(name: 'Dubai', latitude: '25.2048', longitude: '55.2708', photo: 'http://i.imgur.com/ZpuIIfV.jpg')
+City.create(name: 'Interlaken', latitude: '46.6833', longitude: '7.8500', photo: 'http://i.imgur.com/ublHntR.jpg')
 
 
 Post.create(title: 'Best place to eat: sushi', body: 'OMG, there is this place downtown called Sushirrrrrrito. It is like a sushi roll in a burrito. CRAZY!!! I need to explore this food group further and you should too.', user_id: '1', city_id: '1')
@@ -46,7 +46,7 @@ Post.create(title: 'I cant even', body: "Fixie American Apparel mixtape, fanny p
 # Post.create(title: 'I cant even', body: "Fixie American Apparel mixtape, fanny pack direct trade heirloom banh mi cornhole. Brunch tofu selfies, blog cray ennui iPhone hoodie fashion axe authentic Bushwick Echo Park mlkshk Vice. Master cleanse mixtape cornhole, deep v sartorial Williamsburg Banksy hoodie tousled PBR&B gentrify cardigan polaroid cliche fanny pack. Polaroid vegan Portland plaid pickled. Wes Anderson cornhole twee, selvage chambray mumblecore plaid organic occupy authentic. Swag drinking vinegar chambray DIY, trust fund stumptown you probably haven't heard of them letterpress sustainable brunch next level organic. Etsy drinking vinegar 90's deep v keytar Williamsburg.", user_id: '3', city_id: '8')
 # Post.create(title: 'u r so cool, body: "Fixie American Apparel mixtape, fanny pack direct trade heirloom banh mi cornhole. Brunch tofu selfies, blog cray ennui iPhone hoodie fashion axe authentic Bushwick Echo Park mlkshk Vice. Master cleanse mixtape cornhole, deep v sartorial Williamsburg Banksy hoodie tousled PBR&B gentrify cardigan polaroid cliche fanny pack. Polaroid vegan Portland plaid pickled. Wes Anderson cornhole twee, selvage chambray mumblecore plaid organic occupy authentic. Swag drinking vinegar chambray DIY, trust fund stumptown you probably haven't heard of them letterpress sustainable brunch next level organic. Etsy drinking vinegar 90's deep v keytar Williamsburg.", user_id: '4', city_id: '8')
 
-<<<<<<< HEAD
+
 Post.create(title: 'Best Coffee Joint!', body: "Okay, so in the Financial District there's this place called Blue Bottle! It's freaking amazing! Not only is the coffee amazing, but they have amazing Hot Chocolate! You HAVE to go here!", user_id: '2', city_id: '1')
 Post.create(title: 'Worst Coffee Joint!', body: "Starbucks.  All they ever do is make bad coffee. Literally, there's never enough caramel in my macchiato, even when I say 'extra', ugh so annoying.", user_id: '2', city_id: '1')
 
@@ -57,5 +57,4 @@ Post.create(title: 'Worst Coffee Joint!', body: "Starbucks.  All they ever do is
 
 Post.create(title: 'Best Place to Visit!', body: "Twin Peaks is amazing! Not only do you get an amazing view, but there's also a swing there that EVERYONE takes pictures on, totally Instafamous.", user_id: '2', city_id: '2')
 Post.create(title: 'Worst Place to Visit!', body: "Golden Gate Park. Like, I totally get that it's an amazing place, but C'MON the wind!? My hair gets sooo messed up. ugh, never coming back.", user_id: '2', city_id: '2')
-=======
->>>>>>> e7118f9cb500732b2a7547b25e22e98e85663623
+
