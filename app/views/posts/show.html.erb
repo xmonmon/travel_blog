@@ -1,13 +1,41 @@
 <div class="container">
+	<br>
 	<div class="row">
-		<div class="col-sm-6 col-sm-offset-3">
-			<h1><%= @post.title %></h1>
-			<p><%= @post.body %></p>
-			<%= link_to "Add comment", new_comment_path(@post) %>
-			<% if current_user && current_user[:id] == @post[:user_id] %>
-				<%= link_to "Edit", edit_post_path %>
-				<%= link_to "Delete",  @post,  method: :delete, data: { confirm: 'Are you sure?' } %>
-			<% end %>
+		<div class="col-sm-2 col-sm-offset-1">
+			<div class="panel panel-default">
+				  <div class="panel-body" style="text-align:center">
+				    <a href="/vagabonds/<%= @post.user.id %>" >
+				    <h5>Authored by: <%= @post.user.first_name %> </h5></a><br>
+				    <p><%= image_tag @post.user.avatar.url(:thumb) %></p>
+				    <p>Location: <br> <a href="/cities/<%= @post.city.id %>"</a> <%= @post.city.name %></p> 
+				  </div> 
+			</div>
+		</div>
+		<div class="col-sm-6 panel panel-default">
+			<div class="panel-body">
+				<h2><%= @post.title %>
+					<small> 				
+						<% if current_user && current_user[:id] == @post[:user_id] %>
+							<%= link_to "",  @post, class:"glyphicon glyphicon-remove pull-right",  method: :delete, data: { confirm: 'Are you sure?' } %> 
+							<%= link_to "", edit_post_path, class:"glyphicon glyphicon-pencil pull-right" %>
+						<% end %>
+						<%= link_to "", new_comment_path(@post), class:"glyphicon glyphicon-comment pull-right" %> 
+					</small>
+				</h2>
+					<p><%= @post.body %></p>
+					<br>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-4 col-sm-offset-4">
+				<% @post.comments.reverse.each do |comment| %>
+				<div class="panel panel-default comment">
+					<div class="panel-body">
+						<%= comment.body %>
+					</div>
+				</div>
+				<% end %>
+			</div>
 		</div>
 	</div>
 </div>

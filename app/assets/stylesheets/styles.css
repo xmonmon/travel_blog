@@ -15,6 +15,14 @@ body {
   width:100%;
   display:block;
 }
+.panel a {
+  color:black;
+}
+
+.comment{
+  background-color:transparent;
+}
+
 .navbar-default .navbar-nav>li>a {
   color: white;
 }
