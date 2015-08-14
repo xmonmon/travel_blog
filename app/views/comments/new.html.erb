@@ -1,0 +1,19 @@
+<div class="container">
+	<div class="row">
+		<div class="col-sm-6 col-sm-offset-3">
+
+			<center>
+				<h1>Add a comment to post <%= params[:id] %></h1>
+
+			</center>
+
+			<%= form_for @comment, url: {action: "create"}, class: "form-group" do |f|  %>
+				
+				<%= f.label :Comment %>
+				<%= f.text_field :body, placeholder: "Your Comment", class: "form-control", :required => true, :autofocus => true %><br>
+
+				<%= f.submit "Submit comment", class: "btn btn-primary" %>
+			<% end %>
+		</div>
+	</div>
+</div>

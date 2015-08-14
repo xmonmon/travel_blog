@@ -1,7 +1,36 @@
 body {
   background-color: #FEFDFC;
+}
 
-/*  font-family: 'Roboto', sans-serif;*/
+.navbar-default {
+    background-color: #8C8F8E; 
+}
+
+.holds-map {
+  height:500px;
+}
+#map {
+  height: 500px;
+  position:absolute;
+  width:100%;
+  display:block;
+}
+.panel a {
+  color:black;
+}
+
+.comment{
+  background-color:transparent;
+}
+
+.navbar-default .navbar-nav>li>a {
+  color: white;
+}
+
+footer {
+  position:relative;
+  bottom:0;
+  width: 100%;
 }
 
 h1 {
@@ -18,6 +47,7 @@ h3 {
 
 .tagline {
   font-size: 200% !important;
+  text-align: center;
 }
 
 .jumbotron{
@@ -26,11 +56,11 @@ h3 {
 
   color:white;
   margin-top: 0;
+  margin-bottom: 0;
 }
 
 .homepage {
-  background-image:url("http://i.imgur.com/ix4OvHL.png");
-  max-width: 100%;
+  background-color: #8C8F8E;
 }
 
 .jumbotron.homepage h1 {
@@ -39,7 +69,6 @@ h3 {
 
 .navbar {
   margin-bottom:0; 
-
 }
 
 .navbar-brand {
