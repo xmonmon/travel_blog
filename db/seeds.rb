@@ -9,10 +9,12 @@
 User.create(first_name: 'Ian', last_name: 'Civgin', email: 'ian@test.com', password: 'test', current_city: 'San Francisco', avatar: 'https://upload.wikimedia.org/wikipedia/commons/7/72/1,3,5-trichlorobenzene.png')
 User.create(first_name: 'Monika', last_name: 'Chumber', email: 'monika@test.com', password: 'test', current_city: 'San Francisco', avatar: 'https://upload.wikimedia.org/wikipedia/commons/7/72/1,3,5-trichlorobenzene.png')
 User.create(first_name: 'Demo', last_name: 'Demo', email: 'demo@demo.com', password: 'demo', current_city: 'San Francisco', avatar: 'https://upload.wikimedia.org/wikipedia/commons/7/72/1,3,5-trichlorobenzene.png')
+User.create(first_name: 'Adam', last_name: 'Braus', email: 'braus@test.com', password: 'test', current_city: 'London', avatar: 'https://upload.wikimedia.org/wikipedia/commons/7/72/1,3,5-trichlorobenzene.png')
 
 City.create(name: 'San Francisco', latitude: '37.7833', longitude: '-122.4167', photo: 'https://upload.wikimedia.org/wikipedia/commons/c/ce/San_Francisco_at_Sunset_Panorama.jpg')
 City.create(name: 'London', latitude: '51.5072', longitude: '-0.1275', photo: 'http://www.7littlemoments.com/images/products/panorama_london_full.jpg')
 City.create(name: 'Gibraltar', latitude: '36.1430', longitude: '-5.3530', photo: 'http://www.lazyhiker.com/photos/2010_moor/highlights/panorama/20101106155610_view--gibraltar_monkey.jpg')
+
 
 
 Post.create(title: 'Best place to eat: sushi', body: 'OMG, there is this place downtown called Sushirrrrrrito. It is like a sushi roll in a burrito. CRAZY!!! I need to explore this food group further and you should too.', user_id: '1', city_id: '1')
