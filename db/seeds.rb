@@ -23,3 +23,8 @@ Post.create(title: 'Worst Coffee Joint!', body: "Starbucks.  All they ever do is
 
 Post.create(title: 'Best Place to Visit!', body: "Twin Peaks is amazing! Not only do you get an amazing view, but there's also a swing there that EVERYONE takes pictures on, totally Instafamous.", user_id: '2', city_id: '1')
 Post.create(title: 'Worst Place to Visit!', body: "Golden Gate Park. Like, I totally get that it's an amazing place, but C'MON the wind!? My hair gets sooo messed up. ugh, never coming back.", user_id: '2', city_id: '1')
+Post.create(title: 'Best Coffee Joint!', body: "Okay, so in the Financial District there's this place called Blue Bottle! It's freaking amazing! Not only is the coffee amazing, but they have amazing Hot Chocolate! You HAVE to go here!", user_id: '2', city_id: '3')
+Post.create(title: 'Worst Coffee Joint!', body: "Starbucks.  All they ever do is make bad coffee. Literally, there's never enough caramel in my macchiato, even when I say 'extra', ugh so annoying.", user_id: '2', city_id: '3')
+
+Post.create(title: 'Best Place to Visit!', body: "Twin Peaks is amazing! Not only do you get an amazing view, but there's also a swing there that EVERYONE takes pictures on, totally Instafamous.", user_id: '2', city_id: '2')
+Post.create(title: 'Worst Place to Visit!', body: "Golden Gate Park. Like, I totally get that it's an amazing place, but C'MON the wind!? My hair gets sooo messed up. ugh, never coming back.", user_id: '2', city_id: '2')
