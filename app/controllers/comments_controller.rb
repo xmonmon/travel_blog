@@ -1,5 +1,9 @@
 class CommentsController < ApplicationController
     
+<<<<<<< HEAD
+
+=======
+>>>>>>> a3ee1659ff56e5a17ee3e20da6effb27e2e0fdab
   def new
     @comment = Comment.new
   end
