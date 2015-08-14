@@ -1,30 +1,38 @@
 <div class="container">
+	<br>
 	<div class="row">
-		<div class="col-sm-10 col-sm-offset-1">	
-			<center>
-				<%= image_tag @user.avatar.url %>
-				<h1>Hi, <%= @user.full_name %></h1>
-					<strong><p>Current City: <%= @user.current_city %></p></strong> 
-					<p> You have been a member since: <%= @user.created_at %></p>
-					<% if current_user[:id].to_s == params[:id] %> 
-						<%= link_to "Edit", edit_user_path, class:"btn-sm btn-default" %>
-						<%= link_to "Delete", delete_user_path, method: :delete, class:"btn-sm btn-default" %>
+		<div class="col-sm-3">
+			<div class="panel panel-default">
+				<div class="panel-body" style="text-align:center">
+					<p><%= image_tag @user.avatar.url(:medium) %></p>
+				</div>
+			</div>	
+		</div>
+
+		<div class="col-sm-6">	
+			<div class="panel panel-default">
+				<div class="panel-body" >
+					<h1>Hi, <%= @user.full_name %></h1>
+						<strong><p>Current City: <%= @user.current_city %></p>
+						</strong> 
+						<p> You have been a member since: <%= @user.created_at %></p>	
+					<br>
+					<br>
+					<% @user.posts.reverse.each do |post| %>
+							<h4 style="text-align:center"><a href="/posts/<%= post.id %>" > <%= post.title %></a></h4><br>
 					<% end %>
-				<br>
-				<br>
-			</center>
-		</div>	
-	</div>
+				</div>
+						
+			</div>
+		</div>
+	</div>	
+
 	<div class="row">
 		<div class="col-sm-6 col-sm-offset-3">
-			<% @user.posts.each do |post| %>
-			<div class="panel panel-default">
-				<div class="panel-body">
-					<%= post.title %>
-					<%= link_to "View Post", post_path(post), class:"pull-right" %><br>
+			
 				</div>
 			</div>
-			<% end %>
+			
 		</div>
 	</div>
 </div>
