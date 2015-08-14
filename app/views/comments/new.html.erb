@@ -1,16 +1,18 @@
 <div class="container">
 	<div class="row">
 		<div class="col-sm-6 col-sm-offset-3">
-
-			<center>
-				<h1>Add a comment to post <%= params[:id] %></h1>
-
-			</center>
+			
+			<div class="panel-body">
+				<h2><%= @post.title %>
+				</h2>
+					<p><%= @post.body %></p>
+					<br>
+			</div>
 
 			<%= form_for @comment, url: {action: "create"}, class: "form-group" do |f|  %>
 				
-				<%= f.label :Comment %>
-				<%= f.text_field :body, placeholder: "Your Comment", class: "form-control", :required => true, :autofocus => true %><br>
+				<%= f.label :body, "Add a new comment ..." %>
+				<%= f.text_field :body, placeholder: "How do you really feel?", class: "form-control", :required => true, :autofocus => true %><br>
 
 				<%= f.submit "Submit comment", class: "btn btn-primary" %>
 			<% end %>

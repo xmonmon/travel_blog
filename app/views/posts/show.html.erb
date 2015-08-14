@@ -27,14 +27,24 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-sm-4 col-sm-offset-4">
-				<% @post.comments.reverse.each do |comment| %>
-				<div class="panel panel-default comment">
-					<div class="panel-body">
-						<%= comment.body %>
-					</div>
-				</div>
+			<div class="col-sm-6 col-sm-offset-3">
+				<% if @post.comments.any? %>
+					<h3>Comments</h3>
 				<% end %>
+				<% @post.comments.reverse.each do |comment| %>
+					<div class="panel panel-default comment">
+						<div class="panel-body">
+							<h5><%= comment.author if comment.author %> says...<% if comment.user_id == current_user[:id] %>
+									<%= link_to "", "/posts/#{@post.id}/comments/#{comment.id}/delete", class:"glyphicon glyphicon-remove pull-right" %>&nbsp;
+									<%= link_to "", "/posts/#{@post.id}/comments/#{comment.id}/delete", class:"glyphicon glyphicon-pencil pull-right" %>
+									<% end %> </h5>
+							<p><%= comment.body %><br></p>
+								<p class="small"><%= comment.created_at.to_formatted_s(:long)%></p>
+
+						</div>
+					</div>
+				<% end %>
+
 			</div>
 		</div>
 	</div>
